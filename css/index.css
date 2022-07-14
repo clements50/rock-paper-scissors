@@ -7,11 +7,9 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
   background: #082032;
+  position: relative;
 }
 
 .scoreboard {
@@ -34,7 +32,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .player-selection {
@@ -56,6 +54,7 @@ body {
   justify-content: center;
   gap: 2rem;
   align-items: center;
+  padding: 2rem;
 }
 
 .moves {
@@ -76,15 +75,19 @@ body {
   padding: 0.5rem;
 }
 
-footer {
+.footer {
   background: black;
   height: 1.5rem;
+  position: absolute;
+  width: 100vw;
+  bottom: 0px;
 }
 
 @media screen and (min-width: 810px) {
   * {
     font-size: 1.2rem;
   }
+
   .gameboard {
     display: flex;
     flex-direction: row;
