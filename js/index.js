@@ -2,7 +2,8 @@ const playerChoiceBtns = document.querySelectorAll('.player-selection');
 const winningMessage = document.querySelector('.winning-message');
 const playerScoreElement = document.querySelector('.player-score');
 const computerScoreElement = document.querySelector('.computer-score');
-
+const playerMoveElement = document.querySelector('.player-move');
+const computerMoveElement = document.querySelector('.computer-move')
 let computerSelection;
 let playerSelection;
 let computerScore = 0;
@@ -30,21 +31,48 @@ playerChoiceBtns.forEach((btn) => {
 });
 
 
+
 function initWinner(){
-  if(playerSelection === computerSelection){
+ if(playerSelection === computerSelection){
     tie = true;
     checkWinner()
-  }else if(playerSelection === 'Rock' && computerSelection === 'Scissors' ||
-  playerSelection === 'Paper' && computerSelection === 'Rock' ||
-  playerSelection === 'Scissors' && computerSelection === 'Paper'){
+  }else if(playerSelection === "Rock" && computerSelection === 'Scissors'){
     winner = 'Player';
-    checkWinner()
-  }else if(playerSelection === 'Scissors' && computerSelection === 'Rock' ||
-  playerSelection === 'Rock' && computerSelection === 'Paper' ||
-  playerSelection === 'Paper' && computerSelection === 'Scissors'){
-    winner = 'Computer';
+    playerMoveElement.textContent = '🪨';
+    computerMoveElement.textContent = '✂️'; 
     checkWinner();
+  }else if(playerSelection === 'Paper' && computerSelection === 'Rock'){
+    winner = 'Player';
+    playerMoveElement.textContent = '🧻';
+    computerMoveElement.textContent = '🪨'; 
+    checkWinner();
+  }else if(playerSelection === 'Scissors' && computerSelection === 'Paper'){
+    winner = 'Player';
+    playerMoveElement.textContent = '✂️';
+    computerMoveElement.textContent = '🧻'; 
+    checkWinner();
+  }else if(playerSelection === 'Scissors' && computerSelection === 'Rock'){
+  winner = 'Computer';
+    playerMoveElement.textContent = '✂️';
+    computerMoveElement.textContent = '🪨'; 
+    checkWinner();
+
+  }else if(playerSelection === 'Rock' && computerSelection === 'Paper'){
+  winner = 'Computer';
+    playerMoveElement.textContent = '🪨';
+    computerMoveElement.textContent = '🧻'; 
+    checkWinner();
+
+  }else if(playerSelection === 'Paper' && computerSelection === 'Scissors'){
+  winner = 'Computer';
+    playerMoveElement.textContent = '🧻';
+    computerMoveElement.textContent = '✂️'; 
+    checkWinner();
+
   }
+
+
+
 }
 
 function checkWinner(){
@@ -65,3 +93,4 @@ if(tie === true){
 function renderWinner(winningSelection, losingSelection){
   winningMessage.textContent = `${winner} Wins! ${winningSelection} beats ${losingSelection}`;
 }
+
