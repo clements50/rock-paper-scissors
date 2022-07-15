@@ -33,12 +33,24 @@ playerChoiceBtns.forEach((btn) => {
 
 
 function initWinner(){
- if(playerSelection === computerSelection){
+ if(playerSelection === 'Rock' && computerSelection === 'Rock'){
     tie = true;
-   playerMoveElement.textContent = "Tie";
-   computerMoveElement.textContent = 'Tie';
+    playerMoveElement.textContent = "🪨";
+    computerMoveElement.textContent = '🪨';
     checkWinner()
    
+  }else if(playerSelection === 'Paper' && computerSelection === 'Paper'){
+    tie = true;
+    playerMoveElement.textContent = "🧻";
+    computerMoveElement.textContent = '🧻';
+    checkWinner()
+
+  }else if(playerSelection === 'Scissors' && computerSelection === 'Scissors'){
+    tie = true;
+    playerMoveElement.textContent = "✂️";
+    computerMoveElement.textContent = '✂️';
+    checkWinner()
+
   }else if(playerSelection === "Rock" && computerSelection === 'Scissors'){
     winner = 'Player';
     playerMoveElement.textContent = '🪨';
