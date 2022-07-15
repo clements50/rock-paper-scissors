@@ -35,7 +35,10 @@ playerChoiceBtns.forEach((btn) => {
 function initWinner(){
  if(playerSelection === computerSelection){
     tie = true;
+   playerMoveElement.textContent = "Tie";
+   computerMoveElement.textContent = 'Tie';
     checkWinner()
+   
   }else if(playerSelection === "Rock" && computerSelection === 'Scissors'){
     winner = 'Player';
     playerMoveElement.textContent = '🪨';
