@@ -84,6 +84,46 @@ body {
   bottom: 0px;
 }
 
+.modal-bkg {
+  background: rgb(0, 0, 0, 0.7);
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.modal {
+  height: 200px;
+  width: 300px;
+  background: #334756;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.modal-winning-message {
+  font-size: 1.5rem;
+}
+
+.play-again-btn {
+  color: black;
+  background: yellow;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 810px) {
   * {
     font-size: 1.2rem;
