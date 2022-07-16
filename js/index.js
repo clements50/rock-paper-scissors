@@ -88,7 +88,7 @@ function renderWinner(winner, winningSelection, losingSelection) {
 function checkWinner() {
   if (playerScore === 5 || computerScore === 5) {
     modalBackground.style.display = 'flex';
-    if (computerSelection === 5) {
+    if (computerScore === 5) {
       modalWinMessage.textContent = 'Computer Wins!';
     } else if (playerScore === 5) {
       modalWinMessage.textContent = 'Player Wins!';
@@ -99,9 +99,8 @@ function checkWinner() {
 function playRound() {
   playerChoiceBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      if (playerScore === 5 || computerScore === 5) {
-        checkWinner();
-      } else if (playerScore != 5 && computerSelection != 5) {
+      checkWinner();
+      if (playerScore != 5 && computerScore != 5) {
         playerSelection = btn.dataset.selection;
         randomComputerSelection();
         initWinner();
