@@ -82,6 +82,12 @@ body {
   position: absolute;
   width: 100vw;
   bottom: 0px;
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .modal-bkg {
@@ -122,6 +128,7 @@ body {
   border-radius: 4px;
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 810px) {
